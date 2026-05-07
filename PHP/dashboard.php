@@ -32,17 +32,23 @@ $name    = htmlspecialchars($userData['name']);
 $email   = htmlspecialchars($userData['email']);
 $initial = strtoupper(mb_substr($userData['name'], 0, 1));
 
-// ── Fetch dietary preferences from survey table ──
+// ── Fetch dietary preferences from user_preferences table ──
 $dietaryPrefs = [];
 try {
-    $stmtSurvey = $pdo->prepare("
-        SELECT preference_name
-        FROM survey
+    $stmtPrefs = $pdo->prepare("
+        SELECT dietary_restrictions
+        FROM user_preferences
         WHERE user_id = ?
-        ORDER BY preference_name ASC
     ");
-    $stmtSurvey->execute([$userId]);
-    $dietaryPrefs = $stmtSurvey->fetchAll();
+    $stmtPrefs->execute([$userId]);
+    $prefsRow = $stmtPrefs->fetch();
+
+    if ($prefsRow && !empty($prefsRow['dietary_restrictions'])) {
+        $prefItems = array_filter(array_map('trim', explode(',', $prefsRow['dietary_restrictions'])));
+        foreach ($prefItems as $item) {
+            $dietaryPrefs[] = ['preference_name' => $item];
+        }
+    }
 } catch (PDOException $e) {
     $dietaryPrefs = [];
 }
