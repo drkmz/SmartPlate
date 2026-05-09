@@ -157,8 +157,7 @@ Built as a capstone project for **BCS Senior Project** at **Farmingdale State Co
 
 
 
-> *(Add screenshots of your dashboard, PlateBot chat, and Nutrition Explorer here)*
-!
+
 
 ---
 
