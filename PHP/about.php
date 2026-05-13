@@ -745,11 +745,11 @@ echo $headerOutput;
         <div class="team-grid">
             <?php
             $team = [
-                    ['name' => 'Eunice A.',     'role' => 'Full Stack Lead', 'subrole' => 'Database · Security · UI',  'color' => '#283618', 'initial' => 'E'],
-                    ['name' => 'Derek M.',      'role' => 'API Integration & Frontend',         'color' => '#3a6a2a', 'initial' => 'D'],
-                    ['name' => 'Marvin C.',     'role' => 'Frontend Development',               'color' => '#4a7c4a', 'initial' => 'M'],
-                    ['name' => 'James K.',      'role' => 'Frontend Development',               'color' => '#6a9e3a', 'initial' => 'J'],
-                    ['name' => 'Sivakumar N.',  'role' => 'Backend & Debugging',                'color' => '#2a5a1a', 'initial' => 'S'],
+                    ['name' => 'Derek M.',      'role' => 'Project Lead & AI Engineer',  'subrole' => 'API Integration · Frontend', 'color' => '#3a6a2a', 'initial' => 'D'],
+                    ['name' => 'Eunice A.',     'role' => 'Full Stack Lead',                  'subrole' => 'Database · Security · UI',   'color' => '#283618', 'initial' => 'E'],
+                    ['name' => 'Marvin C.',     'role' => 'Frontend Development',                                                    'color' => '#4a7c4a', 'initial' => 'M'],
+                    ['name' => 'James K.',      'role' => 'Frontend Development',                                                    'color' => '#6a9e3a', 'initial' => 'J'],
+                    ['name' => 'Sivakumar N.',  'role' => 'Backend & Debugging',                                                     'color' => '#2a5a1a', 'initial' => 'S'],
             ];
             foreach ($team as $i => $member):
                 $slug = strtolower(preg_replace('/\s+/', '-', $member['name']));
