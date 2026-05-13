@@ -35,8 +35,6 @@ if ($calories == 0) {
     $ch = curl_init($usdaUrl);
     curl_setopt_array($ch, [
         CURLOPT_RETURNTRANSFER => true,
-        CURLOPT_SSL_VERIFYPEER => false,
-        CURLOPT_SSL_VERIFYHOST => false,
         CURLOPT_TIMEOUT        => 10,
     ]);
     $usdaResponse = curl_exec($ch);

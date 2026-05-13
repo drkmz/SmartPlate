@@ -11,8 +11,6 @@ $lookupUrl = 'https://www.themealdb.com/api/json/v1/1/lookup.php?i=' . urlencode
 
 $ch = curl_init($lookupUrl);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
 
 $response = curl_exec($ch);
 if (curl_errno($ch)) die('Error contacting recipe API: ' . curl_error($ch));
